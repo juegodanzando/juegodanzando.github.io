@@ -36,5 +36,71 @@
             max-width: 800px; 
             margin: auto; 
             opacity: 0; 
-            animation: fa
+            animation: fadeInUp 1.5s ease-in-out forwards; 
+            margin-top: 100px; /* Añadido para evitar que el contenido se solape con la barra superior */
+            margin-bottom: 80px; /* Añadido para evitar que el contenido se solape con la barra inferior */
+        }
+        .contacto-form { background: #fff3e0; padding: 20px; border-radius: 10px; }
+        input, textarea { width: 100%; padding: 10px; margin-top: 10px; border: 1px solid #ccc; border-radius: 5px; }
+        button { background: #ff7043; color: white; padding: 10px; border: none; cursor: pointer; transition: transform 0.2s ease-in-out; }
+        button:hover { transform: scale(1.1); }
+        img { max-width: 100%; height: auto; border-radius: 10px; margin-top: 20px; animation: fadeIn 2s ease-in-out; }
+        .icon { font-size: 24px; color: #ff7043; margin: 10px; }
+
+        a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <i class="fas fa-child icon"></i> Taller Juego Danz-Ando
+        <nav style="position: absolute; right: 20px; top: 20px;">
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+    
+    <section>
+        <h2><i class="fas fa-gamepad icon"></i> Juego y Movimiento para Infancias</h2>
+        <img src="danzando.jpeg" alt="Imagen del Taller">
+        <p>Taller para niñxs de 3 a 6 años - Encuentro de juego, música, danza y movimiento.</p>
+        <p><strong>Jueves de 17 a 18 hs en Villa Crespo</strong></p>
+    </section>
+
+    <section>
+        <h2><i class="fas fa-users icon"></i> Sobre Nosotras</h2>
+        <p>Somos Diamela y Paloma, dos profesoras de educación inicial con recorrido en música, danza y yoga.</p>
+        <p>Invitamos a todas las infancias de entre 3 y 6 años a acercarse a explorar y crear distintos movimientos a través del juego y la danza.</p>
+        <p>Será un momento de encontrarse con otrxs mientras descubrimos distintas formas de conocer y habitar nuestras corporalidades de forma integral y sensible.</p>
+        <p>El juego y lo poético se combinan para explorar distintas formas de moverse desde la primera infancia.</p>
+        <p><strong>¡Lxs esperamos!</strong></p>
+    </section>
+
+    <section id="contacto" class="contacto-form">
+        <h2><i class="fas fa-envelope icon"></i> Inscripción</h2>
+        <p>Dejanos tu contacto para más información:</p>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScY1SVmi7XXy3Cv82It3gZN8ATqleonvwvFqkMOE1-GDuC2-w/viewform?embedded=true" width="640" height="2100" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </section>
+    
+    <footer>
+        <i class="fas fa-phone icon"></i> Contacto: Diamela 11-3099-2044 | Paloma 11-5329-5236
+        <div><a href="https://www.instagram.com/juegodanzando/" target="_blank" style="color: white; text-decoration: none;">Síguenos en Instagram</a></div>
+    </footer>
+</body>
+</html>
 
