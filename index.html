@@ -101,7 +101,6 @@
         /* Ajuste responsive del formulario */
         .form-container {
             width: 100%;
-            height: calc(100vh - 180px); /* Resta el espacio del header y footer */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -109,7 +108,6 @@
 
         iframe {
             width: 95%;
-            height: 100%;
             border: none;
         }
 
@@ -136,10 +134,6 @@
 
             .instagram-icon {
                 font-size: 20px;
-            }
-
-            .form-container {
-                height: calc(100vh - 160px);
             }
         }
     </style>
@@ -173,7 +167,7 @@
             <h2><i class="fas fa-envelope icon"></i> Inscripción</h2>
             <p>Dejanos tu contacto para más información:</p>
             <div class="form-container">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScY1SVmi7XXy3Cv82It3gZN8ATqleonvwvFqkMOE1-GDuC2-w/viewform?embedded=true"></iframe>
+                <iframe id="formulario" src="https://docs.google.com/forms/d/e/1FAIpQLScY1SVmi7XXy3Cv82It3gZN8ATqleonvwvFqkMOE1-GDuC2-w/viewform?embedded=true"></iframe>
             </div>
         </section>
     </div>
@@ -186,5 +180,20 @@
             </a>
         </p>
     </footer>
+
+    <script>
+        function ajustarAlturaFormulario() {
+            let alturaVentana = window.innerHeight;
+            let alturaHeader = document.querySelector("header").offsetHeight;
+            let alturaFooter = document.querySelector("footer").offsetHeight;
+            let alturaDisponible = alturaVentana - (alturaHeader + alturaFooter + 40); // 40px de margen
+
+            let iframe = document.getElementById("formulario");
+            iframe.style.height = alturaDisponible + "px";
+        }
+
+        window.onload = ajustarAlturaFormulario;
+        window.onresize = ajustarAlturaFormulario;
+    </script>
 </body>
 </html>
